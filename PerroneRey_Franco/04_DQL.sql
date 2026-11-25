@@ -1,0 +1,7 @@
+-- Para cada una de estas consultas, antes de cada sentencia, se debe indicar como comentario el ciclo 
+-- de ejecución de la consulta SQL, es decir, qué sentencia ocurre primero, cómo se van filtrando los datos, 
+-- en qué orden, por ejemplo: 
+--  ...  
+-- 4. SELECT Selecciona las columnas y calcula las expresiones finales. 
+-- 5. ORDER BY del precio de forma ascendente, los datos ya están filtrados 
+-- 6. LIMIT se limitan el resultado a 10 registros

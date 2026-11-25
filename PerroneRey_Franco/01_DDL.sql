@@ -21,18 +21,6 @@ CREATE TABLE clientes (
     PRIMARY KEY (id_cliente)
 ) ENGINE=InnoDB;
 
-
-CREATE TABLE productos (
-    id_producto INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    nombre VARCHAR(80) NOT NULL,
-    descripcion VARCHAR(500),
-    precio_venta DECIMAL(10,2) NOT NULL CHECK (precio_venta > 0),
-    stock INT UNSIGNED NOT NULL DEFAULT 0,
-
-    PRIMARY KEY (id_producto)
-) ENGINE=InnoDB;
-
-
 CREATE TABLE categorias (
     id_categoria INT UNSIGNED NOT NULL AUTO_INCREMENT,
     nombre VARCHAR(80) NOT NULL DEFAULT 'accesorios',
@@ -40,6 +28,24 @@ CREATE TABLE categorias (
     PRIMARY KEY (id_categoria),
     UNIQUE (nombre)
 ) ENGINE=InnoDB;
+
+CREATE TABLE productos (
+    id_producto INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    id_categoria INT UNSIGNED NOT NULL,
+    nombre VARCHAR(80) NOT NULL,
+    descripcion VARCHAR(500),
+    precio_venta DECIMAL(10,2) NOT NULL CHECK (precio_venta > 0),
+    stock INT UNSIGNED NOT NULL DEFAULT 0,
+
+    PRIMARY KEY (id_producto),
+
+    CONSTRAINT fk_producto_categoria
+        FOREIGN KEY (id_categoria)
+        REFERENCES categorias(id_categoria)
+) ENGINE=InnoDB;
+
+
+
 
 
 CREATE TABLE pedidos (
