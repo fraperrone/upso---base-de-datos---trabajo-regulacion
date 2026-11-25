@@ -15,7 +15,7 @@ CREATE TABLE clientes (
     id_cliente INT UNSIGNED NOT NULL AUTO_INCREMENT,
     nombre VARCHAR(80) NOT NULL,
     apellido VARCHAR(80) NOT NULL,
-    email VARCHAR(250) NOT NULL UNIQUE,
+    email VARCHAR(250) NOT NULL,
     telefono VARCHAR(30) NOT NULL,
 
     PRIMARY KEY (id_cliente)
