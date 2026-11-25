@@ -12,7 +12,7 @@ ADD COLUMN fecha_registro DATE NOT NULL DEFAULT (CURRENT_DATE);
 -- 3 agregar campo costo como entero en la tabla de productos
 
 ALTER TABLE productos
-ADD COLUMN costo INT
+ADD COLUMN costo INTEGER
 
 -- 4 modificar el tipo de datos del campo costo de los productos a decimal
 --   3 para la entera y dos para decimal
@@ -45,6 +45,9 @@ ON categorias(nombre);
 
 -- 7 Se deberá indicar un índice único para el correo electrónico de los clientes (usar ALTER). 
 
+-- ALTER TABLE clientes
+-- DROP INDEX email;
+
 ALTER TABLE clientes
 ADD CONSTRAINT uq_clientes_email UNIQUE (email);
 
@@ -63,8 +66,8 @@ ON productos(nombre, precio_venta);
 -- 10) Se deberá agregar un índice a los productos para realizar búsquedas de texto sobre la descrip-
 -- ción, esto permitirá localizar productos por palabras claves (usar ALTER). 
 
-CREATE INDEX idx_productos_nombre_precio
-ON productos(nombre, precio_venta);
+ALTER TABLE productos
+ADD fulltext index idx_productos_descripcion (descripcion);
 
 
 -- 11) Indicar la sentencia, pero en comentario, para realizar un rollback hasta la etiqueta indicada en 
