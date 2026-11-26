@@ -11,9 +11,9 @@
 
 
 -- 1 INSERT las tablas con datos de prueba
--- CATEGORIAS
--- PRODUCTOS
--- CLIENTES
+-- CATEGORIAS -ok
+-- PRODUCTOS -ok
+-- CLIENTES -ok
 -- PEDIDOS
 -- DETALLE_PEDIDOS
 
