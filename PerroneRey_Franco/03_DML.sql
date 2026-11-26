@@ -14,7 +14,7 @@
 -- CATEGORIAS -ok
 -- PRODUCTOS -ok
 -- CLIENTES -ok
--- PEDIDOS
+-- PEDIDOS -ok
 -- DETALLE_PEDIDOS
 
 INSERT INTO categorias (nombre) VALUES
@@ -55,3 +55,16 @@ INSERT INTO clientes (
 ('Camila', 'Lopez', 'camila@example.com', '1178901234'),
 ('Nicolas', 'Garcia', 'nicolas@example.com', '1189012345'),
 ('Valentina', 'Perez', 'valentina@example.com', '1190123456');
+
+INSERT INTO pedidos (
+    id_cliente,
+    estado
+) VALUES
+(1, 'pendiente'),
+(2, 'pagado'),
+(3, 'enviado'),
+(4, 'pendiente'),
+(5, 'pagado'),
+(6, 'enviado'),
+(7, 'pendiente'),
+(8, 'pagado');
