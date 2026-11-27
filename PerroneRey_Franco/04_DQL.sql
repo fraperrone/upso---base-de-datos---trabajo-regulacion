@@ -5,3 +5,18 @@
 -- 4. SELECT Selecciona las columnas y calcula las expresiones finales. 
 -- 5. ORDER BY del precio de forma ascendente, los datos ya están filtrados 
 -- 6. LIMIT se limitan el resultado a 10 registros
+
+
+
+
+-- 1 un listado de los 5 productos que tengan un stock mayor a 10, de debe mostrar nombre precio
+-- y stock ordenado del mas costoso al mas economico
+
+-- orden de ejecucion: 1- selecciono las columnas que quiero mostrar de tabla productos
+-- 2- se define el filtro, en este caso stock mayor a 10
+-- 3- se define el orden, en este caso por la columna precio de forma descendente
+-- 4- el limite de la cantidad de productos a mostrar, en este caso 5
+select nombre, precio_venta, stock from productos
+where stock > 10
+order by precio_venta desc
+limit 5;
