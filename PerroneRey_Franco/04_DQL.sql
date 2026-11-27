@@ -32,3 +32,18 @@ limit 5;
 
 select id_categoria, count(*) as cantidad_productos from productos
 group by id_categoria
+
+
+-- 3 consulta: Genera un reporte de control de inventario que muestre únicamente aquellas categorías de
+-- productos cuyo precio promedio sea superior a $300. Muestra el código de la categoría y
+-- dicho promedio.
+
+-- Orden ejecucion: 
+-- FROM productos → GROUP BY id_categoria → HAVING AVG(precio_venta) > 300 → SELECT id_categoria, AVG(precio_venta)
+
+SELECT
+    id_categoria,
+    AVG(precio_venta) AS precio_promedio
+FROM productos
+GROUP BY id_categoria
+HAVING AVG(precio_venta) > 300;
