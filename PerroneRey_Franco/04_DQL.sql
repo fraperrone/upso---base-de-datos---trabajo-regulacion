@@ -20,3 +20,15 @@ select nombre, precio_venta, stock from productos
 where stock > 10
 order by precio_venta desc
 limit 5;
+
+
+
+-- 2 consultaL devuelva el codigo de la caterogia  y la cantidad total de productos
+-- asociados a ella
+
+-- Orden ejecucion: 1- se seleccionan las columnas de interes de la tabla productos
+-- en este cado id categoria y funcion count(*) que sirve para contar cantidad 
+-- con la sentencia de groupby
+
+select id_categoria, count(*) as cantidad_productos from productos
+group by id_categoria
