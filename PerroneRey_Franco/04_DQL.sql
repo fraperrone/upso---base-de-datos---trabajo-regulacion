@@ -98,6 +98,19 @@ where p.id_pedido is null
 
 
 --- 7:
+-- Orden ejecucion: FROM productos → INNER JOIN detalle_pedido → ON p.id_producto = dp.id_producto → GROUP BY p.id_producto, p.nombre → HAVING SUM(dp.cantidad) > 50 → SELECT id_producto, nombre, SUM(dp.cantidad * dp.precio_unitario) → ORDER BY total_recaudado DESC
+SELECT
+    p.id_producto,
+    p.nombre,
+    SUM(dp.cantidad * dp.precio_unitario) AS total_recaudado
+FROM productos p
+INNER JOIN detalle_pedido dp
+    ON p.id_producto = dp.id_producto
+GROUP BY
+    p.id_producto,
+    p.nombre
+HAVING SUM(dp.cantidad) > 50
+ORDER BY total_recaudado DESC;
 
 
 
