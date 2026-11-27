@@ -15,7 +15,7 @@
 -- PRODUCTOS -ok
 -- CLIENTES -ok
 -- PEDIDOS -ok
--- DETALLE_PEDIDOS
+-- DETALLE_PEDIDOS - ok
 
 INSERT INTO categorias (nombre) VALUES
 ('Celulares'),
